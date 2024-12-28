@@ -1,11 +1,11 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
 import os
 
-# 環境変数の読み込み
-load_dotenv()
+# 環境変数の設定
+os.environ["OPENAI_API_KEY"] = st.secrets["api_keys"]["OPENAI_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = st.secrets["api_keys"]["GOOGLE_API_KEY"]
 
 # Streamlitの設定
 st.title("🤖 AI チャットボット")
